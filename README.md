@@ -98,3 +98,5 @@ Chaque tâche sera créée sous forme d’issue liée au dépôt.
 
 Le projet est à l’étape de conception et de planification pour le suivi 1.
 Les fonctionnalités présentées dans ce document sont prévues et restent à développer.
+## Tableau de suivi
+[Consulter le Kanban](https://github.com/users/Mouhsine17/projects/1)
