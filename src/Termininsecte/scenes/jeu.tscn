@@ -1,8 +1,23 @@
 [gd_scene format=3 uid="uid://d33b7oudovfa6"]
 
 [ext_resource type="PackedScene" uid="uid://jtfqi24uoj2m" path="res://scenes/insecte.tscn" id="1_b6da0"]
+[ext_resource type="Script" uid="uid://bdwsb5j0265ts" path="res://scenes/decor.gd" id="2_mq4lt"]
 
 [node name="Jeu" type="Node2D" unique_id=1742393311]
 
 [node name="Insecte" parent="." unique_id=419289443 instance=ExtResource("1_b6da0")]
 position = Vector2(200, 300)
+
+[node name="Decor" type="Node2D" parent="." unique_id=1003044359]
+z_index = -1
+script = ExtResource("2_mq4lt")
+
+[node name="Fond1" type="ColorRect" parent="Decor" unique_id=358701280]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.20784314, 0.36862746, 0.23137255, 1)
+
+[node name="Fond2" type="ColorRect" parent="Decor" unique_id=264665374]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.27450982, 0.47843137, 0.28235295, 1)
