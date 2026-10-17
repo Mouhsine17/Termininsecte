@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://jtfqi24uoj2m"]
+
+[ext_resource type="Script" uid="uid://bvmbbt7seidh7" path="res://scenes/insecte.gd" id="1_6abo8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pykb3"]
+radius = 20.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pykb3"]
+size = Vector2(40, 40)
+
+[node name="Insecte" type="CharacterBody2D" unique_id=419289443]
+script = ExtResource("1_6abo8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=759111941]
+shape = SubResource("CircleShape2D_pykb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=823840224]
+texture = SubResource("PlaceholderTexture2D_pykb3")

@@ -1,0 +1,10 @@
+{
+    "godotTools.editorPath.godot4": "C:\\Users\\Admin\\Godot\\Editors\\.editor_config\\Termininsecte\\Godot_v4.7.2-stable_win64.exe",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "files.eol": "\n",
+    "files.exclude": {
+        "**/*.gd.uid": true,
+        "**/*.cs.uid": true
+    }
+}
