@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://fyc22othl8cg"]
+
+[ext_resource type="Script" uid="uid://dxasu7bc7wgyj" path="res://scenes/plante.gd" id="1_s6mg7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 25.0
+
+[node name="Plante" type="Area2D" unique_id=1998918780]
+script = ExtResource("1_s6mg7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1942624049]
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1566987784]
+color = Color(0.4627451, 0.7254902, 0.2784314, 1)
+polygon = PackedVector2Array(-25, -20, 0, -28, 25, -15, 25, 15, 0, 28, -25, 20)
