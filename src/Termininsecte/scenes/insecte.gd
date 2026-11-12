@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 const PROJECTILE = preload("res://scenes/projectile.tscn")
-const MARGE: float = 20.0
+const MARGE: float = 85.0
 
 @export var gravite: float = 900.0
 @export var force_montee: float = 1400.0
 @export var vitesse_max: float = 350.0
 
+var vies: int = 3
+var invincible: bool = false
+var delai_tir: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	# Vol de l'insecte
@@ -19,8 +22,11 @@ func _physics_process(delta: float) -> void:
 	velocity.x = 0.0
 
 	# Un tir à chaque pression sur X
-	if Input.is_action_just_pressed("tirer"):
+	delai_tir = maxf(0.0, delai_tir - delta)
+
+	if Input.is_action_pressed("tirer") and delai_tir <= 0.0:
 		tirer()
+		delai_tir = 0.25
 
 	move_and_slide()
 
@@ -38,4 +44,27 @@ func _physics_process(delta: float) -> void:
 func tirer() -> void:
 	var projectile = PROJECTILE.instantiate()
 	get_parent().add_child(projectile)
-	projectile.global_position = global_position + Vector2(35, 0)
+	projectile.global_position = $SortieTir.global_position
+	
+
+func recevoir_degats() -> void:
+	if invincible:
+		return
+
+	invincible = true
+	vies -= 1
+
+	var affichage = get_parent().get_node("Interface/Vies")
+	affichage.text = "Vies : " + str(vies)
+
+	if vies <= 0:
+		get_parent().call_deferred("terminer_partie")
+		return
+
+	for i in range(6):
+		modulate.a = 0.3
+		await get_tree().create_timer(0.1).timeout
+		modulate.a = 1.0
+		await get_tree().create_timer(0.1).timeout
+
+	invincible = false
